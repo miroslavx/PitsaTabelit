@@ -1,0 +1,875 @@
+/* Bauhaus 1923 Style - Minimalist & Functional */
+@font-face {
+    font-family: 'Bauhaus';
+    src: url('bauhaus.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bauhaus', 'Arial', sans-serif;
+    background: #f5f5dc; /* Bauhaus cream background */
+    color: #000;
+    line-height: 1.4;
+    min-height: 100vh;
+}
+
+/* Header - Simple Black Bar */
+.main-header {
+    background: #000;
+    padding: 20px 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Layout */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Logo - Увеличенный размер */
+.logo {
+    flex-shrink: 0;
+}
+
+.logo-image {
+    height: 120px; /* Увеличено с 60px до 120px */
+    width: auto;
+    display: block;
+}
+
+/* Navigation */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Navigation Tiles - Bauhaus Grid */
+.nav-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.nav-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.1s ease;
+    min-height: 80px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.nav-tile:hover {
+    transform: scale(1.02);
+}
+
+.nav-tile i {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+/* Bauhaus Colors - Primary palette */
+.nav-tile:nth-child(1) { background: #1e5aa8; color: #fff; } /* Blue */
+.nav-tile:nth-child(2) { background: #e74c3c; color: #fff; } /* Red */
+.nav-tile:nth-child(3) { background: #f1c40f; color: #000; } /* Yellow */
+.admin-tile { background: #000 !important; color: #fff !important; }
+.login-tile { background: #fff !important; color: #000 !important; border: 2px solid #000; }
+.register-tile { background: #e74c3c !important; color: #fff !important; }
+.logout-tile { background: #000 !important; color: #fff !important; }
+
+/* User Info Bar */
+.user-info-bar {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.user-info-bar i {
+    margin-right: 5px;
+    color: #f1c40f;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: #fff;
+    min-height: 600px;
+}
+
+/* Typography - Bauhaus style */
+h1, h2 {
+    color: #000;
+    margin: 30px 0 20px 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    border-bottom: 4px solid #000;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+/* Grid System - Bauhaus geometric layout */
+.tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin: 30px 0;
+}
+
+.tile {
+    background: #fff;
+    border: 2px solid #000;
+    overflow: hidden;
+    transition: transform 0.1s ease;
+}
+
+.tile:hover {
+    transform: translate(2px, -2px);
+}
+
+.tile-header {
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tile-content {
+    padding: 20px;
+    font-size: 14px;
+}
+
+.tile-footer {
+    background: #f5f5dc;
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #000;
+}
+
+/* Pizza Cards - Geometric blocks */
+.pizza-card {
+    background: #fff;
+    border: 2px solid #000;
+    overflow: hidden;
+    margin-bottom: 2px;
+    transition: transform 0.1s ease;
+}
+
+.pizza-card:hover {
+    transform: translate(2px, -2px);
+}
+
+.pizza-header {
+    background: #e74c3c;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pizza-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pizza-price {
+    font-size: 18px;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.pizza-body {
+    padding: 20px;
+}
+
+.pizza-description {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.pizza-restaurant {
+    background: #f1c40f;
+    color: #000;
+    padding: 5px 15px;
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Forms - Clean geometric */
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border: 2px solid #000;
+    margin: 30px 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="time"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    background: #fff;
+    font-size: 14px;
+    font-family: 'Bauhaus', Arial, sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    background: #f1c40f;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Buttons - Bauhaus geometric */
+.btn {
+    padding: 12px 20px;
+    border: 2px solid #000;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: 'Bauhaus', Arial, sans-serif;
+}
+
+.btn-primary {
+    background: #1e5aa8;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #1e5aa8;
+}
+
+.btn-success {
+    background: #f1c40f;
+    color: #000;
+}
+
+.btn-success:hover {
+    background: #000;
+    color: #f1c40f;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #fff;
+    color: #e74c3c;
+}
+
+.btn-warning {
+    background: #f1c40f;
+    color: #000;
+}
+
+.btn-warning:hover {
+    background: #000;
+    color: #f1c40f;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Tables - Grid structure */
+.table-container {
+    background: #fff;
+    border: 2px solid #000;
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-right: 1px solid #333;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #ddd;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background: #f5f5dc;
+}
+
+th a {
+    color: #fff;
+    text-decoration: none;
+}
+
+th a:hover {
+    color: #f1c40f;
+}
+
+/* Messages - Clear blocks */
+.message {
+    padding: 15px;
+    margin: 20px 0;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.message i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.success-message {
+    background: #f1c40f;
+    color: #000;
+}
+
+.error-message {
+    background: #e74c3c;
+    color: #fff;
+}
+
+/* Statistics - Bauhaus blocks */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2px;
+    margin: 30px 0;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    text-align: center;
+    transition: transform 0.1s ease;
+}
+
+.stat-card:hover {
+    transform: translate(2px, -2px);
+}
+
+.stat-card:nth-child(1) { background: #1e5aa8; color: #fff; }
+.stat-card:nth-child(2) { background: #e74c3c; color: #fff; }
+.stat-card:nth-child(3) { background: #f1c40f; color: #000; }
+.stat-card:nth-child(4) { background: #000; color: #fff; }
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Footer - Simple black bar */
+.main-footer {
+    background: #000;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: #f1c40f;
+    font-size: 14px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1c40f;
+}
+
+.footer-bottom {
+    background: #000;
+    padding: 15px;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px solid #333;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    background: #fff;
+    border: 2px solid #000;
+    overflow: hidden;
+    margin-bottom: 2px;
+    transition: transform 0.1s ease;
+}
+
+.restaurant-card:hover {
+    transform: translate(2px, -2px);
+}
+
+.restaurant-header {
+    background: #f1c40f;
+    color: #000;
+    padding: 20px;
+}
+
+.restaurant-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.restaurant-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.restaurant-body {
+    padding: 20px;
+}
+
+.restaurant-hours {
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    border: 2px solid #000;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    font-size: 14px;
+    color: #333;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 30px 20px;
+}
+
+.login-form {
+    background: #fff;
+    padding: 40px;
+    border: 4px solid #000;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: none;
+    font-size: 24px;
+}
+
+.login-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-links a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.login-links a:hover {
+    color: #e74c3c;
+}
+
+/* Mini menu */
+.mini-menu {
+    margin-top: 15px;
+    background: #f5f5dc;
+    padding: 15px;
+    border: 1px solid #000;
+}
+
+.mini-pizza-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+}
+
+.mini-pizza-item:last-child {
+    border-bottom: none;
+}
+
+.mini-pizza-name {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mini-pizza-price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Info items */
+.info-item {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.info-item i {
+    color: #000;
+    width: 15px;
+}
+
+/* Price styling */
+.price {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+/* No results */
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.no-results i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #ccc;
+    display: block;
+}
+
+/* Search info */
+.search-info {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Admin welcome */
+.admin-welcome {
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+    border: 2px solid #000;
+}
+
+.admin-welcome p {
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Button sizes */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 10px;
+    margin: 1px;
+}
+
+/* Small text */
+small {
+    display: block;
+    color: #666;
+    font-size: 10px;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .logo-image {
+        height: 100px; /* Уменьшено для мобильных, но все равно больше оригинала */
+    }
+    
+    .nav-tiles {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+    }
+    
+    .tiles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .main-content {
+        margin: 20px;
+        padding: 15px;
+    }
+    
+    .pizza-header,
+    .restaurant-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 80px;
+    }
+    
+    .nav-tiles {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Remove all animations for true Bauhaus simplicity */
+* {
+    animation: none !important;
+    transition: transform 0.1s ease, background 0.1s ease, color 0.1s ease !important;
+}
+/* Popular Pizza Styles */
+
+
+.popular-star {
+    color: #f1c40f;
+    margin-right: 5px;
+}
+
+.no-popular-pizzas {
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    border: 2px solid #000;
+    margin: 30px 0;
+}
+
+.no-popular-pizzas p {
+    margin: 10px 0;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+/* Checkbox styling for Bauhaus theme */
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Table improvements for popular status */
+.popular-star {
+    color: #f1c40f;
+    margin-left: 5px;
+}
+
+/* Button improvements */
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 10px;
+    margin: 1px;
+    min-width: 30px;
+}
+
+/* Form improvements for inline editing */
+td input[type="text"],
+td textarea,
+td input[type="number"],
+td input[type="time"],
+td select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #000;
+    font-size: 12px;
+}
+
+td textarea {
+    min-height: 60px;
+    resize: vertical;
+}
